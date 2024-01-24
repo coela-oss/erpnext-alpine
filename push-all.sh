@@ -11,8 +11,8 @@ bench=$user/frappe-bench
 erpnext=$user/erpnext-only
 enterprise=$user/erpnext-enterprise
 
-docker stop $(docker ps -a -q)
-docker rmi -f $(docker images -a -q)
+#docker stop $(docker ps -a -q)
+#docker rmi -f $(docker images -a -q)
 
 docker build -t $base:latest -f base/Containerfile base --no-cache
 docker push $base:latest

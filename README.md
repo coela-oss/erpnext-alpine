@@ -12,7 +12,7 @@ Use Frappe version 15 and will incorporate compatible apps as much as possible
 
 Common Linux modules and font modules.
 
-[] I plan to further optimize the fonts modules in the future.
+[ ] I plan to further optimize the fonts modules in the future.
 
 ### [bench](https://hub.docker.com/r/coelaoss/frappe-bench)
 
@@ -22,7 +22,7 @@ Generate an Image in which ```bench init```.
 docker run coelaoss/frappe-bench:latest bench --help
 ```
 
-[] Change frappe_bench module by ```pip3 install frappe_bench``` command.
+[ ] Change frappe_bench module by ```pip3 install frappe_bench``` command.
 
 After [this change](https://github.com/frappe/bench/pull/1522/files) merged.
 
@@ -52,4 +52,4 @@ If you want to create your own image, please refer to the following commands and
 ./push-all.sh [docker hub username]
 ```
 
-[] Github action.
+[ ] Github action.
