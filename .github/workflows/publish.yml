@@ -1,4 +1,4 @@
-name: ci
+name: Public Docker Hub
 
 on:
   push:

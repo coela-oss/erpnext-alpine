@@ -25,7 +25,6 @@ for dockerfile in $(find . -type f -name 'Dockerfile'); do
     echo "  dockerfile = \"$short_dockerfile_path\"" >> docker-bake.hcl
     echo "  tags = [\"$username/$image_tag:$base\"]" >> docker-bake.hcl
     if [[ $path != "./base/"* ]]; then
-        # 現在のターゲット名に含まれるOSに基づいて依存関係を設定
         depends=()
         if [[ $targetname == *"debian"* ]]; then
             for target in "${base_targets[@]}"; do
@@ -37,9 +36,11 @@ for dockerfile in $(find . -type f -name 'Dockerfile'); do
             done
         fi
 
-        # depends_on をカンマ区切りで設定
         [[ ${#depends[@]} -gt 0 ]] && echo "  depends_on = [$(IFS=, ; echo "${depends[*]}")]" >> docker-bake.hcl
+    else
+        echo "  push = true"
     fi
+
     echo "}" >> docker-bake.hcl
 done
 
