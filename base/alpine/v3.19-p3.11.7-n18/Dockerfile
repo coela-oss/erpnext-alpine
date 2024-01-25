@@ -110,4 +110,7 @@ RUN apk add --no-cache \
   musl-dev \
   pipx \
   git \
-  && pipx ensurepath
+  && pipx ensurepath \
+  && pip3 install \
+  virtualenv \
+  psutil 
