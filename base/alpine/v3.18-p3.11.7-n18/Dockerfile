@@ -9,6 +9,7 @@ RUN apk add --no-cache \
   py3-pip \
   python3-dev \
   gcc \
+  linux-headers \
   musl-dev \
   git \
   && pip3 install \

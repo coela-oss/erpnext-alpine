@@ -109,6 +109,7 @@ RUN apk add --no-cache \
   gcc \
   musl-dev \
   pipx \
+  linux-headers \
   git \
   && pipx ensurepath \
   && pip3 install \

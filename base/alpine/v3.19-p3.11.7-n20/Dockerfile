@@ -9,6 +9,7 @@ RUN apk add --no-cache \
   python3-dev \
   gcc \
   musl-dev \
+  linux-headers \
   pipx \
   git \
   && pipx ensurepath \
