@@ -13,5 +13,4 @@ RUN apk add --no-cache \
   git \
   && pip3 install \
   virtualenv \
-  pipx \
-  && pipx ensurepath
+  pipx
