@@ -11,7 +11,8 @@ RUN mkdir -p \
 
 COPY resources/tools /home/frappe/tools
 
-RUN npm install -g yarn
+RUN npm install -g yarn \
+  python3 -m pip install pipx
 
 RUN /home/frappe/tools/apps/install.sh
 
