@@ -11,7 +11,8 @@ RUN mkdir -p \
 
 COPY resources/tools /home/frappe/tools
 
-RUN npm install -g yarn
+## already installed by base image
+#RUN npm install -g yarn
 
 RUN /home/frappe/tools/apps/install.sh
 
