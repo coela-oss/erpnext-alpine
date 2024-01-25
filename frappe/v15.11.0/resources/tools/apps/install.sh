@@ -12,7 +12,7 @@ done < "$REPOS_FILE"
 while IFS=, read -r repo branch dir method
 do
   if [[ $method == "pipx" ]]; then
-    if [[ $repo == "frappe" ]]; then
+    if [[ $repo == "frappe/frappe" ]]; then
       pipx install --include-deps "$WORK_DIR/$dir"
     else
       pipx inject --include-deps --include-apps frappe "$WORK_DIR/$dir"
