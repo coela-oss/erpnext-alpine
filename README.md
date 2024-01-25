@@ -5,6 +5,7 @@ Office worker for Dockers.
 ## Purpose
 
 To create instantly respawnable containers that can withstand production environments.
+
 ## Docker Image Tagging Convention
 
 This script generates Docker image tags based on the directory structure of Dockerfiles, specifically designed for a hierarchical directory structure.
@@ -25,13 +26,7 @@ This script generates Docker image tags based on the directory structure of Dock
 cat docker-bake.hcl
 ```
 
-4. **Dependency Management on CICD**: Dependencies for non-base images are set based on the presence of `alpine` or `debian` in the Dockerfile's path, linking each image to its relevant base image.
-
-5. **Target Groups**: A `default` group, including all targets, is generated in `docker-bake.hcl`, allowing single-command building of all images.
-
-### Example
-
-Given a directory structure:
+### Example Structure
 
 ```
 

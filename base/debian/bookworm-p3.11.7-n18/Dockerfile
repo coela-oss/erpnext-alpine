@@ -1,5 +1,6 @@
 FROM python:3.11.7-slim-bookworm
 
+ENV PATH=/root/.local/bin:$PATH
 RUN apt-get update \
   && apt-get install -y \
   nodejs \

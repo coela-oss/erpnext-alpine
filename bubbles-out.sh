@@ -43,5 +43,9 @@ for dockerfile in $(find . -type f -name 'Dockerfile'); do
 done
 
 echo "group \"default\" {" >> docker-bake.hcl
-echo "  targets = [$(IFS=, ; echo "${base_targets[*]}, ${non_base_targets[*]}")]" >> docker-bake.hcl
+echo "  targets = [$(IFS=, ; echo "${base_targets[*]}")]" >> docker-bake.hcl
+echo "}" >> docker-bake.hcl
+
+echo "group \"apps\" {" >> docker-bake.hcl
+echo "  targets = [$(IFS=, ; echo "${non_base_targets[*]}")]" >> docker-bake.hcl
 echo "}" >> docker-bake.hcl
