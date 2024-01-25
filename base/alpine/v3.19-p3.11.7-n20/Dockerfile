@@ -13,5 +13,4 @@ RUN apk add --no-cache \
   git \
   && pipx ensurepath \
   && pip3 install \
-  virtualenv \
-  psutil 
+  virtualenv
