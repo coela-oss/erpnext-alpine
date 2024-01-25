@@ -38,7 +38,7 @@ for dockerfile in $(find . -type f -name 'Dockerfile'); do
 
         [[ ${#depends[@]} -gt 0 ]] && echo "  depends_on = [$(IFS=, ; echo "${depends[*]}")]" >> docker-bake.hcl
     else
-        echo "  push = true"
+        echo "  push = true" >> docker-bake.hcl
     fi
 
     echo "}" >> docker-bake.hcl
