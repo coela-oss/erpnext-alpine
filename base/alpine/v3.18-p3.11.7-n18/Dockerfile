@@ -1,5 +1,6 @@
 FROM python:3.11.7-alpine3.18
 
+# Note: insufficient dependency of pipx and vertual environment
 ENV PATH=/usr/local/bin:$PATH
 RUN apk add --no-cache \
   nodejs \
@@ -10,4 +11,7 @@ RUN apk add --no-cache \
   gcc \
   musl-dev \
   git \
-  && pip3 install virtualenv pipx
+  && pip3 install \
+  virtualenv \
+  pipx \
+  && pipx ensurepath

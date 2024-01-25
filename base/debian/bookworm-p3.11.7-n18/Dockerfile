@@ -7,4 +7,5 @@ RUN apt-get update \
   npm \
   python3-venv \
   pipx \
-  && apt-get clean 
+  && apt-get clean \
+  && pipx ensurepath
