@@ -1,7 +1,7 @@
 # erpnext-alpine
 
 Dockerfile built with Alpine that removes constraints for frappe user.
-
+hwclock --hctosys
 ## Contents
 
 For organizational purposes, this repository is divided into stages for each directory.
@@ -10,9 +10,9 @@ Use Frappe version 15 and will incorporate compatible apps as much as possible
 
 ### [base](https://hub.docker.com/r/coelaoss/frappe-base)
 
-Common Linux modules and font modules.
+Common Linux modules and font modules for testing.
 
-[ ] I plan to further optimize the fonts modules in the future.
+I plan to further optimize the fonts modules in the future.
 
 ### [bench](https://hub.docker.com/r/coelaoss/frappe-bench)
 
@@ -21,12 +21,6 @@ Generate an Image in which ```bench init```.
 ```
 docker run coelaoss/frappe-bench:latest bench --help
 ```
-
-[ ] Change frappe_bench module by ```pip3 install frappe_bench``` command.
-
-After [this change](https://github.com/frappe/bench/pull/1522/files) merged.
-
-Without it, bench setup failed for [the issue](https://github.com/frappe/bench/issues/1521).
 
 ### builder
 
@@ -52,4 +46,4 @@ If you want to create your own image, please refer to the following commands and
 ./push-all.sh [docker hub username]
 ```
 
-[ ] Github action.
+TODO: Use Github action.

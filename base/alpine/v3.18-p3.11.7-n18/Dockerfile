@@ -1,0 +1,13 @@
+FROM python:3.11.7-alpine3.18
+
+RUN apk add --no-cache \
+  nodejs \
+  npm \
+  python3 \
+  py3-pip \
+  python3-dev \
+  py3-pip \
+  gcc \
+  musl-dev \
+  git \
+  && pip3 install virtualenv
