@@ -9,7 +9,7 @@ RUN mkdir -p \
   /home/frappe/logs \
   /home/frappe/tools 
 
-COPY ./resources/tools /home/frappe/tools
+COPY resources/tools /home/frappe/tools
 
 RUN npm install -g yarn
 
