@@ -1,32 +1,31 @@
 # Port Office
 
-Office worker for Dockers.
+* Manage docker specification and dispach the hub.
+* Enable faster setup with directory structure tagging and simple tools.
 
-## Purpose
+## Tagging Rules/Tools
 
-To create instantly respawnable containers that can withstand production environments.
-
-## Docker Image Tagging Convention
-
-This script generates Docker image tags based on the directory structure of Dockerfiles, specifically designed for a hierarchical directory structure.
-
-### Tagging Rules
-
-1. **Base Directory**: Directories named `base` are considered the root for base images. Dockerfiles within subdirectories of `base` are treated as base images.
-
-2. **Image Tag Format**: Docker images are tagged based on their directory paths. The tag format is: `username/dir1-dir2:dir3`, where:
+### Image Tag Format
+- Docker images are tagged based on their directory paths. The tag format is: `username/dir1-dir2:dir3`, where:
    - `dir1`: App name of the top-level directory set.
+    - the ```base``` directory is a little special for depends on other directory.
    - `dir2`: Additional info of the dir1 to dir3.
    - `dir3`: Mainly set the version.
 
-3. **Path Simplification**: The `Dockerfile` path in `docker-bake.hcl` is simplified to exclude the first two directory names, enhancing readability.
+#### bubbles-out.sh
+Build bake file script generates Docker image tags based on the directory structure of Dockerfiles, specifically designed for a hierarchical directory structure.
 
 ```
-./bubbles-out.sh
+./bubbles-out.sh [docker hub username]
+```
+
+After exec the script. Bake file for Github Action out `bocker-bake.hcl` in same directory.
+
+```
 cat docker-bake.hcl
 ```
 
-### Example Structure
+#### Example Structure
 
 ```
 
@@ -45,4 +44,3 @@ cat docker-bake.hcl
     └── v1.0
       └── Dockerfile
 ```
-
