@@ -44,3 +44,11 @@ cat docker-bake.hcl
     └── v1.0
       └── Dockerfile
 ```
+
+### Local build
+
+If want to build a specific file locally, run the following command:
+
+```
+./local-build.sh [target name in hcl file]
+```
